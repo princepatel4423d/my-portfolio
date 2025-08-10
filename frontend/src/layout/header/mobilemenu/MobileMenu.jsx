@@ -122,7 +122,7 @@ export function MobileMenu() {
               title="License"
               icon={File}
               rel="license"
-              href="https://github.com/princepatel4423d/portfolio/blob/main/LICENSE"
+              href="https://github.com/princepatel4423d/my-portfolio/blob/main/LICENSE"
             />
             <OutLink
               title="Github"
