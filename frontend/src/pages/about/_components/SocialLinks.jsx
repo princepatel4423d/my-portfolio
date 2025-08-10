@@ -57,7 +57,7 @@ const SocialLinks = () => {
                         <LinkedinLogo size={28} weight="bold" />
                         <div>
                             <h3 className="text-sm sm:text-lg md:text-xl font-bold">LinkedIn</h3>
-                            <p className="text-xs sm:text-sm md:text-base">mateusfg</p>
+                            <p className="text-xs sm:text-sm md:text-base">princepatel4423d</p>
                         </div>
                     </div>
                     <p className="text-xs sm:text-sm md:text-base">Open profile →</p>
@@ -72,7 +72,7 @@ const SocialLinks = () => {
                         <StackOverflowLogo size={28} weight="bold" />
                         <div>
                             <h3 className="text-sm sm:text-lg md:text-xl font-bold">Stack Overflow</h3>
-                            <p className="text-xs sm:text-sm md:text-base">mateusfg7</p>
+                            <p className="text-xs sm:text-sm md:text-base">princepatel4423d</p>
                         </div>
                     </div>
                     <p className="text-xs sm:text-sm md:text-base">Open summary →</p>
@@ -87,7 +87,7 @@ const SocialLinks = () => {
                         <Code size={28} weight="bold" />
                         <div>
                             <h3 className="text-sm sm:text-lg md:text-xl font-bold">Codepen</h3>
-                            <p className="text-xs sm:text-sm md:text-base">mateusfg7</p>
+                            <p className="text-xs sm:text-sm md:text-base">princepatel4423d</p>
                         </div>
                     </div>
                     <p className="text-xs sm:text-sm md:text-base">View pens →</p>
@@ -102,7 +102,7 @@ const SocialLinks = () => {
                         <RedditLogo size={28} weight="bold" />
                         <div>
                             <h3 className="text-sm sm:text-lg md:text-xl font-bold">Reddit</h3>
-                            <p className="text-xs sm:text-sm md:text-base">u/mateusfg7</p>
+                            <p className="text-xs sm:text-sm md:text-base">u/princep4423d</p>
                         </div>
                     </div>
                     <p className="text-xs sm:text-sm md:text-base">See comments →</p>
@@ -117,7 +117,7 @@ const SocialLinks = () => {
                         <TwitterLogo size={28} weight="bold" />
                         <div>
                             <h3 className="text-sm sm:text-lg md:text-xl font-bold">Twitter</h3>
-                            <p className="text-xs sm:text-sm md:text-base">@mateusfg77</p>
+                            <p className="text-xs sm:text-sm md:text-base">@princep4423d</p>
                         </div>
                     </div>
                     <p className="text-xs sm:text-sm md:text-base">See tweets →</p>
@@ -132,7 +132,7 @@ const SocialLinks = () => {
                         <InstagramLogo size={28} weight="bold" />
                         <div>
                             <h3 className="text-sm sm:text-lg md:text-xl font-bold">Instagram</h3>
-                            <p className="text-xs sm:text-sm md:text-base">@mateusfg7</p>
+                            <p className="text-xs sm:text-sm md:text-base">@whoprixce4423</p>
                         </div>
                     </div>
                     <p className="text-xs sm:text-sm md:text-base">Open profile →</p>
