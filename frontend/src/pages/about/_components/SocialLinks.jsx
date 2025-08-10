@@ -35,7 +35,7 @@ const SocialLinks = () => {
 
                 {/* GitHub */}
                 <a
-                    href="https://github.com/mateusfg7"
+                    href="https://github.com/princepatel4423d"
                     className="bg-gradient-to-tr from-gray-800 to-black backdrop-blur-md text-white p-3 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-500"
                 >
                     <div className="flex items-center gap-4 mb-2">
@@ -50,7 +50,7 @@ const SocialLinks = () => {
 
                 {/* LinkedIn */}
                 <a
-                    href="https://linkedin.com/in/mateusfg"
+                    href="https://linkedin.com/in/princepatel4423d"
                     className="bg-gradient-to-tr from-sky-400 to-blue-600 backdrop-blur-md text-white p-3 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-500"
                 >
                     <div className="flex items-center gap-4 mb-2">
@@ -65,7 +65,7 @@ const SocialLinks = () => {
 
                 {/* Stack Overflow */}
                 <a
-                    href="https://stackoverflow.com/users/mateusfg7"
+                    href="https://stackoverflow.com/users/princepatel4423d"
                     className="bg-gradient-to-tr from-orange-400 to-yellow-500 backdrop-blur-md text-white p-3 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-500"
                 >
                     <div className="flex items-center gap-4 mb-2">
@@ -80,7 +80,7 @@ const SocialLinks = () => {
 
                 {/* Codepen */}
                 <a
-                    href="https://codepen.io/mateusfg7"
+                    href="https://codepen.io/princepatel4423d"
                     className="bg-gradient-to-tr from-neutral-700 to-neutral-900 backdrop-blur-md text-white p-3 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-500"
                 >
                     <div className="flex items-center gap-4 mb-2">
@@ -95,7 +95,7 @@ const SocialLinks = () => {
 
                 {/* Reddit */}
                 <a
-                    href="https://reddit.com/u/mateusfg7"
+                    href="https://reddit.com/u/princep4423d"
                     className="bg-gradient-to-tr from-orange-500 to-red-400 backdrop-blur-md text-white p-3 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-500"
                 >
                     <div className="flex items-center gap-4 mb-2">
@@ -110,7 +110,7 @@ const SocialLinks = () => {
 
                 {/* Twitter */}
                 <a
-                    href="https://twitter.com/mateusfg77"
+                    href="https://twitter.com/princep4423d"
                     className="bg-gradient-to-tr from-cyan-400 to-blue-500 backdrop-blur-md text-white p-3 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-500"
                 >
                     <div className="flex items-center gap-4 mb-2">
@@ -125,7 +125,7 @@ const SocialLinks = () => {
 
                 {/* Instagram */}
                 <a
-                    href="https://instagram.com/mateusfg7"
+                    href="https://instagram.com/whoprixce4423"
                     className="bg-gradient-to-tr from-pink-500 via-purple-500 to-indigo-500 backdrop-blur-md text-white p-3 rounded-lg shadow-xl hover:scale-105 transform transition-all duration-500"
                 >
                     <div className="flex items-center gap-4 mb-2">
