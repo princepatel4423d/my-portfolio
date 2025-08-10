@@ -1,0 +1,14 @@
+/* Layout.css */
+
+.layout {
+  max-width: 1152px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.layout-content {
+  flex: 1;
+  padding: 2rem 0;
+}
