@@ -32,7 +32,7 @@ const FooterSocial = () => (
       </span>
     </a>
     <a
-      href="https://twitter.com/princep4423"
+      href="https://x.com/princep4423d"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Twitter"
