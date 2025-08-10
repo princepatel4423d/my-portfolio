@@ -4,7 +4,7 @@ import { LinkedinLogo, GithubLogo, TwitterLogo } from "@phosphor-icons/react";
 const FooterSocial = () => (
   <>
     <a
-      href="https://linkedin.com/in/aayushbharti"
+      href="https://linkedin.com/in/princepatel4423d"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="LinkedIn"
@@ -18,7 +18,7 @@ const FooterSocial = () => (
       </span>
     </a>
     <a
-      href="https://github.com/aayushbharti"
+      href="https://github.com/princepatel4423d"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="GitHub"
@@ -32,7 +32,7 @@ const FooterSocial = () => (
       </span>
     </a>
     <a
-      href="https://twitter.com/aayushbharti"
+      href="https://twitter.com/princep4423"
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Twitter"
