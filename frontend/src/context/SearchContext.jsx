@@ -127,7 +127,7 @@ export function SearchContext({ children }) {
       name: 'Source Code',
       section: 'Website',
       icon: <GithubLogo size="1em" />,
-      perform: () => window.open('https://github.com/princepatel4423d/portfolio', '_blank')
+      perform: () => window.open('https://github.com/princepatel4423d/my-portfolio', '_blank')
     },
     {
       id: 'license',
@@ -135,7 +135,7 @@ export function SearchContext({ children }) {
       section: 'Website',
       icon: <File size="1em" />,
       perform: () =>
-        window.open('https://github.com/princepatel4423d/portfolio/blob/main/LICENSE', '_blank')
+        window.open('https://github.com/princepatel4423d/my-portfolio/blob/main/LICENSE', '_blank')
     },
   ]
 
