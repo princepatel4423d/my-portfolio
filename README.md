@@ -3,7 +3,7 @@
 This is the source code for my **personal portfolio website**, built to showcase my projects, skills, experiences, and achievements.  
 The site is fully responsive, visually modern, and optimized for performance and SEO.
 
-<!-- ![Portfolio Screenshot](./screenshot.png)  Replace with actual screenshot -->
+![Image](https://github.com/user-attachments/assets/ad98e299-a76f-428d-b0f5-4f6f63caef4d)
 
 ---
 
