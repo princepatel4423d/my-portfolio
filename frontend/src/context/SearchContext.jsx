@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import {
   House,
   User,
-  Trophy,
+  Target,
+  PaperPlaneTilt,
   Briefcase,
   Note,
   Notebook,
@@ -46,11 +47,18 @@ export function SearchContext({ children }) {
       perform: perform('/about')
     },
     {
-      id: 'achievement',
-      name: 'Achievement',
+      id: 'bucketlist',
+      name: 'Bucketlist',
       section: 'Navigation',
-      icon: <Trophy size="1em" />,
-      perform: perform('/achievement')
+      icon: <Target size="1em" />,
+      perform: perform('/bucketlist')
+    },
+    {
+      id: 'contact',
+      name: 'Contact',
+      section: 'Navigation',
+      icon: <PaperPlaneTilt size="1em" />,
+      perform: perform('/contact')
     },
     {
       id: 'blog',
