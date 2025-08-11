@@ -38,9 +38,14 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-600 to-blue-900">
-      <div className="max-w-md w-full p-8 bg-white rounded-2xl shadow-lg">
-        <h2 className="text-3xl font-bold text-center mb-6">Admin Login</h2>
+    <div className="min-h-screen flex items-center justify-center px-4 py-8">
+      <div className="max-w-md w-full p-8 bg-white rounded-3xl shadow-2xl border border-blue-100">
+        {/* Title */}
+        <h2 className="text-4xl font-extrabold text-center mb-8 text-blue-700">
+          Admin Login
+        </h2>
+
+        {/* Form */}
         <form onSubmit={onSubmitHandler} className="space-y-6">
           <input
             type="email"
@@ -48,7 +53,7 @@ const Login = () => {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:ring focus:border-blue-400"
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-200 placeholder-gray-400"
           />
           <input
             type="password"
@@ -56,20 +61,31 @@ const Login = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:ring focus:border-blue-400"
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-400 focus:border-blue-400 transition-all duration-200 placeholder-gray-400"
           />
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2 bg-blue-700 text-white rounded hover:bg-blue-800 transition"
+            className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-800 text-white font-semibold rounded-xl shadow-md hover:from-blue-700 hover:to-blue-900 transition-all duration-200 disabled:opacity-60"
           >
-            {loading ? "Logging in..." : "Login"}
+            {loading ? 'Logging in...' : 'Login'}
           </button>
         </form>
-        {errorMsg && <p className="text-center text-red-600 mt-3">{errorMsg}</p>}
-        <div className="mt-5 text-center text-sm text-white">
-          Don't have an account?{" "}
-          <button className="underline" onClick={() => navigate("/signup")}>
+
+        {/* Error Message */}
+        {errorMsg && (
+          <p className="text-center text-red-600 mt-4 text-sm font-medium">
+            {errorMsg}
+          </p>
+        )}
+
+        {/* Sign Up Link */}
+        <div className="mt-6 text-center text-sm text-gray-600">
+          Don't have an account?{' '}
+          <button
+            className="underline text-blue-600 hover:text-blue-800 font-medium"
+            onClick={() => navigate('/signup')}
+          >
             Sign Up
           </button>
         </div>
