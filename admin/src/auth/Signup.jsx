@@ -39,9 +39,14 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-500 to-blue-800">
-      <div className="max-w-md w-full p-8 bg-white rounded-2xl shadow-lg">
-        <h2 className="text-3xl font-bold text-center mb-6">Admin Signup</h2>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-green-400 via-teal-500 to-blue-800 px-4 py-8">
+      <div className="max-w-md w-full p-8 bg-white rounded-3xl shadow-2xl border border-green-100">
+        {/* Title */}
+        <h2 className="text-4xl font-extrabold text-center mb-8 text-green-700">
+          Admin Signup
+        </h2>
+
+        {/* Form */}
         <form onSubmit={onSubmitHandler} className="space-y-6">
           <input
             type="text"
@@ -49,7 +54,7 @@ const Signup = () => {
             placeholder="Full Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:ring focus:border-green-400"
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-400 focus:border-green-400 transition-all duration-200 placeholder-gray-400"
           />
           <input
             type="email"
@@ -57,7 +62,7 @@ const Signup = () => {
             placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:ring focus:border-green-400"
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-400 focus:border-green-400 transition-all duration-200 placeholder-gray-400"
           />
           <input
             type="password"
@@ -66,20 +71,31 @@ const Signup = () => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full px-4 py-2 border rounded-md focus:ring focus:border-green-400"
+            className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-400 focus:border-green-400 transition-all duration-200 placeholder-gray-400"
           />
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2 bg-green-600 text-white rounded hover:bg-green-700 transition"
+            className="w-full py-3 bg-gradient-to-r from-green-600 to-green-700 text-white font-semibold rounded-xl shadow-md hover:from-green-700 hover:to-green-800 transition-all duration-200 disabled:opacity-60"
           >
             {loading ? "Signing up..." : "Sign Up"}
           </button>
         </form>
-        {errorMsg && <p className="text-center text-red-600 mt-3">{errorMsg}</p>}
-        <div className="mt-5 text-center text-sm text-gray-700">
+
+        {/* Error message */}
+        {errorMsg && (
+          <p className="text-center text-red-600 mt-4 text-sm font-medium">
+            {errorMsg}
+          </p>
+        )}
+
+        {/* Login link */}
+        <div className="mt-6 text-center text-sm text-gray-600">
           Already registered?{" "}
-          <button className="underline text-blue-600" onClick={() => navigate("/login")}>
+          <button
+            className="underline text-blue-600 hover:text-blue-800 font-medium"
+            onClick={() => navigate("/login")}
+          >
             Login
           </button>
         </div>
