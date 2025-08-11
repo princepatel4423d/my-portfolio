@@ -31,20 +31,20 @@ const dashboardLinks = [
 
 const Dashboard = () => {
   return (
-    <section className='min-h-screen'>
-      <h1 className="text-3xl text-center font-bold mb-8">Admin Dashboard</h1>
+    <section className='min-h-screen bg-gray-50'>
+      <h1 className="text-3xl text-center font-bold mb-8 text-gray-900">Admin Dashboard</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
         {dashboardLinks.map((link) => (
           <Link
             key={link.title}
             to={link.path}
-            className="bg-white dark:bg-neutral-800 p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-200 flex flex-col gap-2"
+            className="bg-white p-6 rounded-2xl shadow hover:shadow-lg transition-all duration-200 flex flex-col gap-2 border border-gray-200"
           >
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 text-gray-800">
               {link.icon}
               <h2 className="text-xl font-semibold">{link.title}</h2>
             </div>
-            <p className="text-sm text-neutral-600 dark:text-neutral-400">
+            <p className="text-sm text-gray-600">
               {link.description}
             </p>
           </Link>

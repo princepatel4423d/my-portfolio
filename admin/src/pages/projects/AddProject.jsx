@@ -9,12 +9,12 @@ const AddProject = () => {
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
-    type: "small", // default project type
+    type: "small",
     title: "",
     description: "",
     imageUrl: "",
-    stack: "", // comma separated input, converted to array on submit
-    tags: "",  // comma separated input, converted to array on submit
+    stack: "",
+    tags: "",
     sourceUrl: "",
     demoUrl: "",
   });
@@ -96,15 +96,11 @@ const AddProject = () => {
   };
 
   return (
-    <form 
-      onSubmit={handleSubmit} 
-      className="space-y-6"
-      noValidate
-    >
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Add New Project</h2>
+    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
+      <h2 className="text-2xl font-bold text-gray-900">Add New Project</h2>
 
       <div>
-        <label htmlFor="type" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+        <label htmlFor="type" className="block mb-1 font-medium text-gray-700">
           Project Type
         </label>
         <select
@@ -113,7 +109,7 @@ const AddProject = () => {
           value={form.type}
           onChange={handleChange}
           disabled={submitting}
-          className="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+          className="w-full border border-gray-300 rounded p-2 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
           required
         >
           <option value="small">Small Project</option>
@@ -122,7 +118,7 @@ const AddProject = () => {
       </div>
 
       <div>
-        <label htmlFor="title" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+        <label htmlFor="title" className="block mb-1 font-medium text-gray-700">
           Title
         </label>
         <input
@@ -132,7 +128,7 @@ const AddProject = () => {
           value={form.title}
           onChange={handleChange}
           disabled={submitting}
-          className="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+          className="w-full border border-gray-300 rounded p-2 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
           placeholder="Project title"
           maxLength={150}
           required
@@ -140,7 +136,7 @@ const AddProject = () => {
       </div>
 
       <div>
-        <label htmlFor="description" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+        <label htmlFor="description" className="block mb-1 font-medium text-gray-700">
           Description
         </label>
         <textarea
@@ -149,7 +145,7 @@ const AddProject = () => {
           value={form.description}
           onChange={handleChange}
           disabled={submitting}
-          className="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+          className="w-full border border-gray-300 rounded p-2 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
           placeholder="Project description"
           rows={5}
           maxLength={1000}
@@ -160,7 +156,7 @@ const AddProject = () => {
       {form.type === "big" && (
         <>
           <div>
-            <label htmlFor="imageUrl" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="imageUrl" className="block mb-1 font-medium text-gray-700">
               Image URL
             </label>
             <input
@@ -170,14 +166,14 @@ const AddProject = () => {
               value={form.imageUrl}
               onChange={handleChange}
               disabled={submitting}
-              className="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-300 rounded p-2 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
               placeholder="https://example.com/image.jpg"
               required
             />
           </div>
 
           <div>
-            <label htmlFor="stack" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+            <label htmlFor="stack" className="block mb-1 font-medium text-gray-700">
               Tech Stack (comma-separated)
             </label>
             <input
@@ -187,7 +183,7 @@ const AddProject = () => {
               value={form.stack}
               onChange={handleChange}
               disabled={submitting}
-              className="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+              className="w-full border border-gray-300 rounded p-2 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
               placeholder="React, Node.js, MongoDB"
               required
             />
@@ -196,7 +192,7 @@ const AddProject = () => {
       )}
 
       <div>
-        <label htmlFor="tags" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+        <label htmlFor="tags" className="block mb-1 font-medium text-gray-700">
           Tags (comma-separated)
         </label>
         <input
@@ -206,14 +202,14 @@ const AddProject = () => {
           value={form.tags}
           onChange={handleChange}
           disabled={submitting}
-          className="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+          className="w-full border border-gray-300 rounded p-2 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
           placeholder="open-source, api, ui"
         />
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="sourceUrl" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+          <label htmlFor="sourceUrl" className="block mb-1 font-medium text-gray-700">
             Source URL
           </label>
           <input
@@ -223,12 +219,12 @@ const AddProject = () => {
             value={form.sourceUrl}
             onChange={handleChange}
             disabled={submitting}
-            className="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 rounded p-2 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
             placeholder="https://github.com/yourrepo"
           />
         </div>
         <div>
-          <label htmlFor="demoUrl" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+          <label htmlFor="demoUrl" className="block mb-1 font-medium text-gray-700">
             Demo URL
           </label>
           <input
@@ -238,7 +234,7 @@ const AddProject = () => {
             value={form.demoUrl}
             onChange={handleChange}
             disabled={submitting}
-            className="w-full border border-gray-300 dark:border-gray-600 rounded p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 rounded p-2 bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
             placeholder="https://demo.example.com"
           />
         </div>

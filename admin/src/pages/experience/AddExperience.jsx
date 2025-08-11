@@ -94,7 +94,7 @@ const AddExperience = () => {
       }
 
       addToast("Experience added successfully!", "success");
-      navigate("/experiences"); // Adjust route as appropriate for your app
+      navigate("/experiences"); 
     } catch (e) {
       addToast(e.message, "error");
     } finally {
@@ -108,10 +108,10 @@ const AddExperience = () => {
       className="space-y-6"
       noValidate
     >
-      <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">Add Experience</h2>
+      <h2 className="text-2xl font-semibold text-gray-900">Add Experience</h2>
 
       <div>
-        <label htmlFor="role" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+        <label htmlFor="role" className="block mb-1 font-medium text-gray-700">
           Role <span className="text-red-600">*</span>
         </label>
         <input
@@ -124,12 +124,12 @@ const AddExperience = () => {
           maxLength={100}
           required
           placeholder="Ex: Frontend Developer"
-          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
       <div>
-        <label htmlFor="company" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+        <label htmlFor="company" className="block mb-1 font-medium text-gray-700">
           Company <span className="text-red-600">*</span>
         </label>
         <input
@@ -142,12 +142,12 @@ const AddExperience = () => {
           maxLength={150}
           required
           placeholder="Ex: ABC Tech"
-          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
       <div>
-        <label htmlFor="location" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+        <label htmlFor="location" className="block mb-1 font-medium text-gray-700">
           Location
         </label>
         <input
@@ -159,13 +159,13 @@ const AddExperience = () => {
           disabled={submitting}
           maxLength={100}
           placeholder="City, State, Country"
-          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
       <div className="flex flex-col sm:flex-row sm:space-x-4">
         <div className="flex-1">
-          <label htmlFor="startDate" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+          <label htmlFor="startDate" className="block mb-1 font-medium text-gray-700">
             Start Date <span className="text-red-600">*</span>
           </label>
           <input
@@ -176,15 +176,15 @@ const AddExperience = () => {
             onChange={onChange}
             disabled={submitting}
             required
-            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div className="flex-1">
           <label
             htmlFor="endDate"
-            className={`block mb-1 font-medium text-gray-700 dark:text-gray-300 ${
-              form.isCurrent ? "text-gray-400 dark:text-gray-500" : ""
+            className={`block mb-1 font-medium text-gray-700 ${
+              form.isCurrent ? "text-gray-400" : ""
             }`}
           >
             End Date {form.isCurrent && "(Currently working)"}
@@ -197,8 +197,8 @@ const AddExperience = () => {
             onChange={onChange}
             disabled={submitting || form.isCurrent}
             required={!form.isCurrent}
-            className={`w-full px-4 py-2 border rounded shadow-sm focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white ${
-              form.isCurrent ? "opacity-50 cursor-not-allowed" : "border-gray-300"
+            className={`w-full px-4 py-2 border rounded shadow-sm focus:ring-2 focus:ring-blue-500 ${
+              form.isCurrent ? "opacity-50 cursor-not-allowed border-gray-300" : "border-gray-300"
             }`}
           />
         </div>
@@ -212,15 +212,15 @@ const AddExperience = () => {
           checked={form.isCurrent}
           onChange={onChange}
           disabled={submitting}
-          className="mr-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded cursor-pointer dark:bg-gray-700 dark:border-gray-600"
+          className="mr-2 w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded cursor-pointer"
         />
-        <label htmlFor="isCurrent" className="select-none font-medium text-gray-700 dark:text-gray-300">
+        <label htmlFor="isCurrent" className="select-none font-medium text-gray-700">
           Currently working here
         </label>
       </div>
 
       <div>
-        <label htmlFor="description" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+        <label htmlFor="description" className="block mb-1 font-medium text-gray-700">
           Description <span className="text-red-600">*</span>
         </label>
         <textarea
@@ -233,12 +233,12 @@ const AddExperience = () => {
           required
           maxLength={1000}
           placeholder="Brief description of your responsibilities and achievements"
-          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
       <div>
-        <label htmlFor="highlights" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+        <label htmlFor="highlights" className="block mb-1 font-medium text-gray-700">
           Highlights (one per line)
         </label>
         <textarea
@@ -249,12 +249,12 @@ const AddExperience = () => {
           onChange={onChange}
           disabled={submitting}
           placeholder="Enter each highlight on a separate line"
-          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
         />
       </div>
 
       <div>
-        <label htmlFor="techStack" className="block mb-1 font-medium text-gray-700 dark:text-gray-300">
+        <label htmlFor="techStack" className="block mb-1 font-medium text-gray-700">
           Tech Stack (comma separated)
         </label>
         <input
@@ -265,7 +265,7 @@ const AddExperience = () => {
           onChange={onChange}
           disabled={submitting}
           placeholder="e.g. React, Node.js, MongoDB"
-          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+          className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
         />
       </div>
 

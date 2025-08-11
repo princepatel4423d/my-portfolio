@@ -6,13 +6,12 @@ import { AppContext } from '@/context/AppContext';
 import { ToastContext } from '@/context/ToastContext';
 
 const EditBlog = () => {
-  const { slug } = useParams(); // Use slug, not id
+  const { slug } = useParams();
   const { backendUrl, isLoggedin } = useContext(AppContext);
   const { addToast } = useContext(ToastContext);
   const navigate = useNavigate();
   const editor = useRef(null);
 
-  // Form state variables
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [content, setContent] = useState('');
@@ -22,14 +21,12 @@ const EditBlog = () => {
   const [image, setImage] = useState(null);
   const [submitting, setSubmitting] = useState(false);
 
-  // Memoized Jodit Editor config to prevent re-instantiation
   const editorConfig = useMemo(() => ({
     readonly: false,
     height: 400,
     toolbarSticky: false,
   }), []);
 
-  // Fetch blog data by slug to prefill fields on mount or slug change
   useEffect(() => {
     if (!slug) return;
 
@@ -52,7 +49,6 @@ const EditBlog = () => {
     fetchBlog();
   }, [backendUrl, slug, addToast]);
 
-  // Parse tags input to array, max 5 tags
   const parseTags = (tagsString) =>
     tagsString
       .split(',')
@@ -60,7 +56,6 @@ const EditBlog = () => {
       .filter((tag) => tag.length > 0)
       .slice(0, 5);
 
-  // Image file input change handler
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -72,7 +67,6 @@ const EditBlog = () => {
     }
   };
 
-  // Handle form submission to update blog
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -129,11 +123,11 @@ const EditBlog = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold mb-6 text-gray-800">Edit Blog</h2>
+      <h2 className="text-2xl font-semibold mb-6 text-gray-900">Edit Blog</h2>
       <form onSubmit={handleSubmit} encType="multipart/form-data" className="space-y-6">
         {/* Title */}
         <div>
-          <label htmlFor="title" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="title" className="block font-medium text-gray-800 mb-1">
             Title <span className="text-red-600">*</span>:
           </label>
           <input
@@ -144,13 +138,13 @@ const EditBlog = () => {
             disabled={submitting}
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 bg-white text-gray-900 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         {/* Description */}
         <div>
-          <label htmlFor="description" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="description" className="block font-medium text-gray-800 mb-1">
             Description <span className="text-red-600">*</span>:
           </label>
           <textarea
@@ -161,13 +155,13 @@ const EditBlog = () => {
             value={description}
             rows={3}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 bg-white text-gray-900 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         {/* Content */}
         <div>
-          <label htmlFor="content" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="content" className="block font-medium text-gray-800 mb-1">
             Content <span className="text-red-600">*</span>:
           </label>
           <JoditEditor
@@ -176,13 +170,13 @@ const EditBlog = () => {
             onBlur={(newContent) => setContent(newContent)}
             config={editorConfig}
             tabIndex={1}
-            className="border border-gray-300 rounded"
+            className="border border-gray-300 bg-white text-gray-900 rounded"
           />
         </div>
 
         {/* Read Time */}
         <div>
-          <label htmlFor="readTime" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="readTime" className="block font-medium text-gray-800 mb-1">
             Read Time <span className="text-red-600">*</span> (e.g., "5 min read"):
           </label>
           <input
@@ -192,13 +186,13 @@ const EditBlog = () => {
             disabled={submitting}
             value={readTime}
             onChange={(e) => setReadTime(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 bg-white text-gray-900 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         {/* Category */}
         <div>
-          <label htmlFor="category" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="category" className="block font-medium text-gray-800 mb-1">
             Category <span className="text-red-600">*</span>:
           </label>
           <input
@@ -208,13 +202,13 @@ const EditBlog = () => {
             disabled={submitting}
             value={category}
             onChange={(e) => setCategory(e.target.value)}
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 bg-white text-gray-900 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         {/* Tags */}
         <div>
-          <label htmlFor="tags" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="tags" className="block font-medium text-gray-800 mb-1">
             Tags (comma separated, max 5):
           </label>
           <input
@@ -224,13 +218,13 @@ const EditBlog = () => {
             value={tags}
             onChange={(e) => setTags(e.target.value)}
             placeholder="e.g. react, javascript, programming"
-            className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 bg-white text-gray-900 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         {/* Image upload */}
         <div>
-          <label htmlFor="image" className="block font-medium text-gray-700 mb-1">
+          <label htmlFor="image" className="block font-medium text-gray-800 mb-1">
             Update Image (optional):
           </label>
           <input
@@ -239,7 +233,7 @@ const EditBlog = () => {
             accept="image/*"
             disabled={submitting}
             onChange={handleImageChange}
-            className="block"
+            className="block text-gray-800"
           />
         </div>
 

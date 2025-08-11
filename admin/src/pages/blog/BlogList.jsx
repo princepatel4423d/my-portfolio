@@ -71,7 +71,7 @@ const BlogList = () => {
     <div className="space-y-8">
       {/* Header: title and create button */}
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-        <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
+        <h2 className="text-3xl font-extrabold text-gray-900">
           Blog List
         </h2>
         <button
@@ -93,16 +93,16 @@ const BlogList = () => {
           {blogs.map(({ slug, title, description, category, date }) => (
             <li
               key={slug}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow border border-gray-200 dark:border-gray-700 flex flex-col justify-between"
+              className="bg-white rounded-lg shadow border border-gray-200 flex flex-col justify-between"
             >
               <div className="p-6 flex flex-col flex-grow">
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 line-clamp-2">
                   {title}
                 </h3>
-                <p className="text-gray-700 dark:text-gray-300 flex-grow mb-4 line-clamp-3">
+                <p className="text-gray-700 flex-grow mb-4 line-clamp-3">
                   {description}
                 </p>
-                <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400 mt-auto">
+                <div className="flex flex-wrap gap-4 text-sm text-gray-600 mt-auto">
                   <span>
                     <strong className="font-semibold">Category:</strong> {category}
                   </span>
@@ -117,7 +117,7 @@ const BlogList = () => {
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 dark:border-gray-700 px-6 py-3 flex justify-end gap-3">
+              <div className="border-t border-gray-200 px-6 py-3 flex justify-end gap-3">
                 <Link
                   to={`/blogs/edit/${slug}`}
                   className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-md transition focus:outline-none focus:ring-2 focus:ring-blue-500"

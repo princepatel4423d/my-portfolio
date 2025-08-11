@@ -32,8 +32,8 @@ connectDB();
 
 // Allowed CORS origins
 const allowedOrigins = [
-  'https://my-portfolio-frontend-lb9d.onrender.com',
-  'https://my-portfolio-admin-gyjw.onrender.com'
+  process.env.PORTFOLIO_URL,
+  process.env.ADMIN_URL
 ];
 
 // Middleware

@@ -44,7 +44,7 @@ const ProjectList = () => {
     setDeletingId(id);
     try {
       const token = localStorage.getItem("adminToken");
-      const res = await fetch(`${backendUrl}/project/delete/${id}`, {
+      const res = await fetch(`${backendUrl}/api/project/delete/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

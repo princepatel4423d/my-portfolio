@@ -7,7 +7,7 @@ export const AppContextProvider = ({ children }) => {
   const [isLoggedin, setIsLoggedin] = useState(false);
   const [adminProfile, setAdminProfile] = useState(null);
 
-  const backendUrl = "https://my-portfolio-backend-1p0l.onrender.com";
+  const backendUrl = "http://localhost:5000";
 
   useEffect(() => {
     const token = localStorage.getItem("adminToken");

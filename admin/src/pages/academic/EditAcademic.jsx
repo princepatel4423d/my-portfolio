@@ -121,7 +121,7 @@ const EditAcademic = () => {
 
   if (loading)
     return (
-      <div className="text-center py-12 text-gray-600 dark:text-gray-400 font-semibold">
+      <div className="text-center py-12 text-gray-600 font-semibold">
         Loading Academic Record...
       </div>
     );
@@ -132,7 +132,7 @@ const EditAcademic = () => {
       className="space-y-6"
       autoComplete="off"
     >
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+      <h2 className="text-2xl font-bold text-gray-900 mb-4">
         Edit Academic Record
       </h2>
       <div className="space-y-4">
@@ -148,7 +148,7 @@ const EditAcademic = () => {
             required
             maxLength={100}
             disabled={submitting}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
             placeholder="e.g. B.Tech, M.Sc, PhD, 12th"
           />
         </div>
@@ -164,7 +164,7 @@ const EditAcademic = () => {
             required
             maxLength={150}
             disabled={submitting}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
             placeholder="e.g. IIT Bombay, XYZ High School"
           />
         </div>
@@ -179,7 +179,7 @@ const EditAcademic = () => {
             onChange={handleChange}
             maxLength={100}
             disabled={submitting}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
             placeholder="e.g. Computer Science"
           />
         </div>
@@ -194,7 +194,7 @@ const EditAcademic = () => {
             onChange={handleChange}
             maxLength={20}
             disabled={submitting}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
             placeholder="e.g. 8.6, 92%"
           />
         </div>
@@ -211,7 +211,7 @@ const EditAcademic = () => {
               required
               maxLength={10}
               disabled={submitting}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
               placeholder="e.g. 2021"
             />
           </div>
@@ -226,7 +226,7 @@ const EditAcademic = () => {
               onChange={handleChange}
               maxLength={10}
               disabled={submitting}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
               placeholder="e.g. 2025 or Present"
             />
           </div>
@@ -243,7 +243,7 @@ const EditAcademic = () => {
             maxLength={500}
             disabled={submitting}
             rows={4}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm focus:ring-2 focus:ring-blue-500"
             placeholder="Add any achievements, projects, or remarks"
           />
         </div>

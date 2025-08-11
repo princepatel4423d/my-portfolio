@@ -72,12 +72,8 @@ const AddAcademic = () => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="space-y-6"
-      autoComplete="off"
-    >
-      <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+    <form onSubmit={handleSubmit} className="space-y-6" autoComplete="off">
+      <h2 className="text-2xl font-bold text-gray-900 mb-4">
         Add Academic Record
       </h2>
       <div className="space-y-4">
@@ -93,7 +89,7 @@ const AddAcademic = () => {
             required
             maxLength={100}
             disabled={submitting}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
             placeholder="e.g. B.Tech, M.Sc, PhD, 12th"
           />
         </div>
@@ -109,7 +105,7 @@ const AddAcademic = () => {
             required
             maxLength={150}
             disabled={submitting}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
             placeholder="e.g. IIT Bombay, XYZ High School"
           />
         </div>
@@ -124,7 +120,7 @@ const AddAcademic = () => {
             onChange={handleChange}
             maxLength={100}
             disabled={submitting}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
             placeholder="e.g. Computer Science"
           />
         </div>
@@ -139,7 +135,7 @@ const AddAcademic = () => {
             onChange={handleChange}
             maxLength={20}
             disabled={submitting}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
             placeholder="e.g. 8.6, 92%"
           />
         </div>
@@ -156,7 +152,7 @@ const AddAcademic = () => {
               required
               maxLength={10}
               disabled={submitting}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
               placeholder="e.g. 2021"
             />
           </div>
@@ -171,7 +167,7 @@ const AddAcademic = () => {
               onChange={handleChange}
               maxLength={10}
               disabled={submitting}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+              className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
               placeholder="e.g. 2025 or Present"
             />
           </div>
@@ -188,7 +184,7 @@ const AddAcademic = () => {
             maxLength={500}
             disabled={submitting}
             rows={4}
-            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded shadow-sm dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="w-full px-4 py-2 border border-gray-300 rounded shadow-sm bg-white text-gray-900 focus:ring-2 focus:ring-blue-500"
             placeholder="Add any achievements, projects, or remarks"
           />
         </div>

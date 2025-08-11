@@ -75,7 +75,7 @@ const AcademicList = () => {
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-        <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">
+        <h2 className="text-3xl font-extrabold text-gray-900">
           Academic Details
         </h2>
         <button
@@ -95,19 +95,19 @@ const AcademicList = () => {
           {academics.map((acad) => (
             <li
               key={acad._id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow border border-gray-200 dark:border-gray-700 flex flex-col justify-between"
+              className="bg-white rounded-lg shadow border border-gray-200 flex flex-col justify-between"
             >
               <div className="p-6 flex flex-col flex-grow">
                 <div className="flex justify-between mb-1">
-                  <div className="font-semibold text-lg text-gray-900 dark:text-white">{acad.degree}</div>
-                  <div className="text-sm text-neutral-600 dark:text-neutral-400">{acad.startYear} - {acad.endYear || "Present"}</div>
+                  <div className="font-semibold text-lg text-gray-900">{acad.degree}</div>
+                  <div className="text-sm text-gray-600">{acad.startYear} - {acad.endYear || "Present"}</div>
                 </div>
-                <div className="mb-1 text-gray-700 dark:text-gray-300">{acad.institution}</div>
-                {acad.major && <div className="mb-1 text-gray-600 dark:text-gray-400"><strong>Major:</strong> {acad.major}</div>}
-                {acad.cgpa && <div className="mb-1 text-gray-600 dark:text-gray-400"><strong>CGPA:</strong> {acad.cgpa}</div>}
-                {acad.notes && <div className="mb-2 text-gray-800 dark:text-gray-200">{acad.notes}</div>}
+                <div className="mb-1 text-gray-700">{acad.institution}</div>
+                {acad.major && <div className="mb-1 text-gray-600"><strong>Major:</strong> {acad.major}</div>}
+                {acad.cgpa && <div className="mb-1 text-gray-600"><strong>CGPA:</strong> {acad.cgpa}</div>}
+                {acad.notes && <div className="mb-2 text-gray-800">{acad.notes}</div>}
               </div>
-              <div className="border-t border-gray-200 dark:border-gray-700 px-6 py-3 flex justify-end gap-3">
+              <div className="border-t border-gray-200 px-6 py-3 flex justify-end gap-3">
                 <Link
                   to={`/academics/edit/${acad._id}`}
                   className="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold rounded-md transition focus:outline-none focus:ring-2 focus:ring-blue-500"

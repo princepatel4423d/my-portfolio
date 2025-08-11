@@ -9,9 +9,8 @@ const EditProject = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Form state for project data
   const [form, setForm] = useState({
-    type: "small",    // "big" or "small"
+    type: "small",
     title: "",
     description: "",
     imageUrl: "",
@@ -21,10 +20,9 @@ const EditProject = () => {
     demoUrl: "",
   });
 
-  const [loading, setLoading] = useState(true);   // Loading existing project
-  const [submitting, setSubmitting] = useState(false); // Form submit status
+  const [loading, setLoading] = useState(true);
+  const [submitting, setSubmitting] = useState(false);
 
-  // Fetch project data when component mounts or id changes
   useEffect(() => {
     if (!id) {
       addToast("Project ID not specified", "error");
@@ -42,7 +40,6 @@ const EditProject = () => {
         }
         const data = await res.json();
 
-        // Populate form fields, converting arrays to comma-separated strings
         setForm({
           type: data.type || "small",
           title: data.title || "",
@@ -63,13 +60,11 @@ const EditProject = () => {
     fetchProject();
   }, [id, backendUrl, addToast]);
 
-  // Input change handler
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Form validation
   const validateForm = () => {
     if (!form.title.trim()) {
       addToast("Title is required", "error");
@@ -92,15 +87,11 @@ const EditProject = () => {
     return true;
   };
 
-  // Submit handler for updating project
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (!validateForm()) return;
-
     setSubmitting(true);
 
-    // Prepare payload to send to backend, convert interested fields to arrays
     const payload = {
       ...form,
       stack: form.stack.split(",").map((s) => s.trim()).filter(Boolean),
@@ -134,7 +125,7 @@ const EditProject = () => {
 
   if (loading) {
     return (
-      <div className="text-center py-10 text-gray-600">
+      <div className="text-center py-10 text-gray-500">
         Loading project...
       </div>
     );
@@ -143,14 +134,14 @@ const EditProject = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="space-y-6"
+      className="space-y-6 bg-white p-6 rounded-lg shadow border border-gray-200"
       noValidate
     >
-      <h2 className="text-2xl font-bold mb-6">Edit Project</h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-6">Edit Project</h2>
 
       {/* Project Type */}
       <div>
-        <label htmlFor="type" className="block mb-1 font-medium">
+        <label htmlFor="type" className="block mb-1 font-medium text-gray-700">
           Project Type
         </label>
         <select
@@ -159,7 +150,7 @@ const EditProject = () => {
           value={form.type}
           onChange={handleChange}
           disabled={submitting}
-          className="w-full border border-gray-300 rounded px-3 py-2"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none bg-white text-gray-800"
           required
         >
           <option value="small">Small</option>
@@ -169,7 +160,7 @@ const EditProject = () => {
 
       {/* Title */}
       <div>
-        <label htmlFor="title" className="block mb-1 font-medium">
+        <label htmlFor="title" className="block mb-1 font-medium text-gray-700">
           Title
         </label>
         <input
@@ -178,7 +169,7 @@ const EditProject = () => {
           value={form.title}
           onChange={handleChange}
           disabled={submitting}
-          className="w-full border border-gray-300 rounded px-3 py-2"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none bg-white text-gray-800"
           maxLength={150}
           required
         />
@@ -186,7 +177,7 @@ const EditProject = () => {
 
       {/* Description */}
       <div>
-        <label htmlFor="description" className="block mb-1 font-medium">
+        <label htmlFor="description" className="block mb-1 font-medium text-gray-700">
           Description
         </label>
         <textarea
@@ -195,7 +186,7 @@ const EditProject = () => {
           value={form.description}
           onChange={handleChange}
           disabled={submitting}
-          className="w-full border border-gray-300 rounded px-3 py-2"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none bg-white text-gray-800"
           rows={5}
           maxLength={1000}
           required
@@ -206,7 +197,7 @@ const EditProject = () => {
       {form.type === "big" && (
         <>
           <div>
-            <label htmlFor="imageUrl" className="block mb-1 font-medium">
+            <label htmlFor="imageUrl" className="block mb-1 font-medium text-gray-700">
               Image URL
             </label>
             <input
@@ -215,7 +206,7 @@ const EditProject = () => {
               value={form.imageUrl}
               onChange={handleChange}
               disabled={submitting}
-              className="w-full border border-gray-300 rounded px-3 py-2"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none bg-white text-gray-800"
               required
               placeholder="https://example.com/image.jpg"
               type="url"
@@ -223,7 +214,7 @@ const EditProject = () => {
           </div>
 
           <div>
-            <label htmlFor="stack" className="block mb-1 font-medium">
+            <label htmlFor="stack" className="block mb-1 font-medium text-gray-700">
               Technologies (comma-separated)
             </label>
             <input
@@ -232,7 +223,7 @@ const EditProject = () => {
               value={form.stack}
               onChange={handleChange}
               disabled={submitting}
-              className="w-full border border-gray-300 rounded px-3 py-2"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none bg-white text-gray-800"
               placeholder="React, Node.js, MongoDB"
               required
             />
@@ -242,7 +233,7 @@ const EditProject = () => {
 
       {/* Tags */}
       <div>
-        <label htmlFor="tags" className="block mb-1 font-medium">
+        <label htmlFor="tags" className="block mb-1 font-medium text-gray-700">
           Tags (comma-separated)
         </label>
         <input
@@ -251,7 +242,7 @@ const EditProject = () => {
           value={form.tags}
           onChange={handleChange}
           disabled={submitting}
-          className="w-full border border-gray-300 rounded px-3 py-2"
+          className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none bg-white text-gray-800"
           placeholder="open-source, ui, api"
         />
       </div>
@@ -259,7 +250,7 @@ const EditProject = () => {
       {/* Source & Demo URLs */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <label htmlFor="sourceUrl" className="block mb-1 font-medium">
+          <label htmlFor="sourceUrl" className="block mb-1 font-medium text-gray-700">
             Source URL
           </label>
           <input
@@ -268,13 +259,13 @@ const EditProject = () => {
             value={form.sourceUrl}
             onChange={handleChange}
             disabled={submitting}
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none bg-white text-gray-800"
             placeholder="https://github.com/username/repo"
             type="url"
           />
         </div>
         <div>
-          <label htmlFor="demoUrl" className="block mb-1 font-medium">
+          <label htmlFor="demoUrl" className="block mb-1 font-medium text-gray-700">
             Demo URL
           </label>
           <input
@@ -283,7 +274,7 @@ const EditProject = () => {
             value={form.demoUrl}
             onChange={handleChange}
             disabled={submitting}
-            className="w-full border border-gray-300 rounded px-3 py-2"
+            className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-400 focus:outline-none bg-white text-gray-800"
             placeholder="https://demo.example.com"
             type="url"
           />
@@ -293,7 +284,7 @@ const EditProject = () => {
       <button
         type="submit"
         disabled={submitting}
-        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded font-semibold disabled:opacity-50"
+        className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {submitting ? "Saving..." : "Update Project"}
       </button>
