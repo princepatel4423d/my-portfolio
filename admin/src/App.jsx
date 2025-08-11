@@ -3,7 +3,7 @@ import Providers from './Providers';
 import ProtectedRoute from './routes/ProtectedRoute';
 import Layout from '@/layout/Layout';
 import Login from '@/auth/Login';
-import Signup from '@/auth/Signup';
+// import Signup from '@/auth/Signup';
 import ResetPassword from '@/auth/ResetPassword';
 // Dashboard
 import Dashboard from '@/pages/Dashboard';
@@ -29,7 +29,7 @@ function App() {
         <Routes>
           {/* Public routes */}
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          {/* <Route path="/signup" element={<Signup />} /> */}
           <Route path="/reset-password" element={<ResetPassword />} />
 
           {/* Redirect root to dashboard */}

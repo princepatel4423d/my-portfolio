@@ -80,7 +80,7 @@ const Login = () => {
         )}
 
         {/* Sign Up Link */}
-        <div className="mt-6 text-center text-sm text-gray-600">
+        {/* <div className="mt-6 text-center text-sm text-gray-600">
           Don't have an account?{' '}
           <button
             className="underline text-blue-600 hover:text-blue-800 font-medium"
@@ -88,7 +88,7 @@ const Login = () => {
           >
             Sign Up
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );
