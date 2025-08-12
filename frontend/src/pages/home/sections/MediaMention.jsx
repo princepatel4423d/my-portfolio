@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import {
   MusicNote,
   MapPin,
@@ -73,7 +74,7 @@ const MediaMention = () => {
         <div className="grid gap-3">
 
           {/* Latest Blog Post */}
-          <div
+          <Link
             className="p-2 border rounded-lg shadow-sm flex flex-col sm:flex-row gap-4 items-stretch sm:items-start hover:scale-95 transition duration-500 cursor-pointer"
             onClick={() => {
               if (latestPost?.slug) window.location.href = `/blog/post/${latestPost.slug}`;
@@ -125,7 +126,7 @@ const MediaMention = () => {
                 </>
               )}
             </div>
-          </div>
+          </Link>
 
           {/* Location and Music */}
           <div className="flex gap-3">
