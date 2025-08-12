@@ -16,11 +16,13 @@ const BlogPost = () => {
   // Track which heading is active (scroll spy)
   const [activeId, setActiveId] = useState(null);
 
-  // Extract headings for TOC
+  // Compute headings for Table of Contents unconditionally
   const headings = useMemo(() => {
     if (!post?.content) return [];
+
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = post.content;
+
     const headingElements = tempDiv.querySelectorAll("h2, h3");
 
     return Array.from(headingElements).map((heading) => {
@@ -36,7 +38,7 @@ const BlogPost = () => {
         level: heading.tagName === "H2" ? 2 : 3,
       };
     });
-  }, [post?.content]);
+  }, [post]);
 
   // Update active heading while scrolling
   useEffect(() => {
@@ -147,8 +149,8 @@ const BlogPost = () => {
                   key={id}
                   href={`#${id}`}
                   className={`block mb-2 transition-colors hover:text-blue-500 ${activeId === id
-                      ? "text-blue-600 font-semibold"
-                      : "text-neutral-700 dark:text-neutral-300"
+                    ? "text-blue-600 font-semibold"
+                    : "text-neutral-700 dark:text-neutral-300"
                     } ${level === 3 ? "ml-4 text-sm" : "ml-0 text-base font-medium"}`}
                 >
                   <span className="relative">
@@ -225,8 +227,8 @@ const BlogPost = () => {
                 key={id}
                 href={`#${id}`}
                 className={`block mb-2 transition-colors hover:text-blue-500 ${activeId === id
-                    ? "text-blue-600 font-semibold"
-                    : "text-neutral-700 dark:text-neutral-300"
+                  ? "text-blue-600 font-semibold"
+                  : "text-neutral-700 dark:text-neutral-300"
                   } ${level === 3 ? "ml-4 text-sm" : "ml-0 text-base font-medium"}`}
               >
                 <span className="relative">
