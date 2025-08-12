@@ -267,3 +267,15 @@ body {
 .animate-marquee-right {
   animation: marquee-right 30s linear infinite;
 }
+
+/* Rotating Wheel */
+.rotate-circle {
+  animation: spin-smooth 8s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes spin-smooth {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
