@@ -1,7 +1,7 @@
 import React from 'react'
-import Hero from './_components/Hero'
-import MediaMention from './_components/MediaMention'
-import HomeIntro from './_components/HomeIntro'
+import Hero from './sections/Hero'
+import MediaMention from './sections/MediaMention'
+import HomeIntro from './sections/HomeIntro'
 
 const Home = () => {
   return (
