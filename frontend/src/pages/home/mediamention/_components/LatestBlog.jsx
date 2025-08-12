@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AppContext } from '@/context/AppContext';
 import { formatDate } from '@/utils/formatDate';
 
@@ -27,7 +28,7 @@ const LatestBlog = () => {
   }, [backendUrl]);
 
   return (
-    <div
+    <Link
       className="p-2 border rounded-lg shadow-sm flex flex-col sm:flex-row gap-4 items-stretch sm:items-start hover:scale-95 transition duration-500 cursor-pointer"
       onClick={() => {
         if (latestPost?.slug) window.location.href = `/blog/post/${latestPost.slug}`;
@@ -79,7 +80,7 @@ const LatestBlog = () => {
           </>
         )}
       </div>
-    </div>
+    </Link>
   );
 };
 
