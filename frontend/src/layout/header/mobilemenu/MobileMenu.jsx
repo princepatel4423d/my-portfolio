@@ -119,7 +119,7 @@ export function MobileMenu() {
             <Search />
 
             <OutLink
-              title="License"
+              title="LICENSE"
               icon={File}
               rel="license"
               href="https://github.com/princepatel4423d/my-portfolio/blob/main/LICENSE"
