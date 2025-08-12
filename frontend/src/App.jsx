@@ -16,6 +16,7 @@ const CV = lazy(() => import('@/components/cv/CV'))
 // others
 import Contact from '@/pages/more/Contact';
 import BucketList from '@/pages/more/BucketList';
+import SocialLinks from './pages/about/_components/SocialLinks'
 import PrivacyPolicy from '@/layout/footer/pages/PrivacyPolicy';
 import Terms from '@/layout/footer/pages/Terms';
 import NotFound from '@/components/common/NotFound'
@@ -36,6 +37,7 @@ function App() {
                 <Route path="/cv" element={<CV />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/bucketlist" element={<BucketList />} />
+                <Route path="/sociallinks" element={<SocialLinks />} />
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms-conditions" element={<Terms />} />
                 <Route path="*" element={<NotFound />} />

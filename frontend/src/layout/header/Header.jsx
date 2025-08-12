@@ -19,7 +19,7 @@ const moreDropdown = [
 ];
 
 const moreLinks = [
-  { title: 'Links', desc: 'All my links are here', path: '/links' },
+  { title: 'Links', desc: 'All my links are here', path: '/sociallinks' },
   { title: 'Uses', desc: 'A peek into my digital...', path: '/uses' },
   { title: 'Attribution', desc: 'Journey to create this site', path: '/attribution' }
 ];
