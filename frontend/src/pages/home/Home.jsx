@@ -1,14 +1,14 @@
 import React from 'react'
-import Hero from './sections/Hero'
-import MediaMention from './sections/MediaMention'
-import HomeIntro from './sections/HomeIntro'
+import Hero from './hero/Hero'
+import MediaMention from './mediamention/MediaMention'
+import HomeIntro from './info/MainIntro'
 
 const Home = () => {
   return (
     <div>
       <Hero />
       <MediaMention />
-      <HomeIntro />
+      <MainIntro />
     </div>
   )
 }

@@ -14,7 +14,7 @@ import {
 import { SkillIcons } from '@/assets/Skills';
 import { assets } from '@/assets/assets';
 
-const HomeIntro = () => {
+const MainIntro = () => {
   const username = 'princepatel4423d';
   const [totals, setTotals] = useState({ stars: 0, forks: 0 });
   const [latestPost, setLatestPost] = useState(null);
@@ -172,4 +172,4 @@ const HomeIntro = () => {
   );
 };
 
-export default HomeIntro;
+export default MainIntro;

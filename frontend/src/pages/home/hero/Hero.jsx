@@ -1,6 +1,6 @@
 import React from "react";
 import { Briefcase, FileText } from "@phosphor-icons/react";
-import { Typewriter } from "../_components/TypeWriter";
+import { Typewriter } from "./_components/TypeWriter";
 import { Link } from "react-router-dom";
 import { assets } from "@/assets/assets";
 
