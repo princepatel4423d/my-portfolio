@@ -8,6 +8,7 @@ import {
   DownloadSimple,
   ArrowUpRight,
   GithubLogo,
+  HouseLine
 } from '@phosphor-icons/react';
 
 import { SkillIcons } from '@/assets/Skills';
@@ -72,19 +73,19 @@ const HomeIntro = () => {
         </p>
 
         <p className="text-lg">
-          See more <a href="/about" className="underline">about me</a> or check out <a href="/projects" className="underline">my projects</a> ;)
+          See more <Link to="/about" className="underline">about me</Link> or check out <Link to="/projects" className="underline">my projects</Link> ;)
         </p>
 
         <p className="text-lg">
           You might enjoy reading my{" "}
-          <a href="/blog" className="underline">blog posts</a>
+          <Link to="/blog" className="underline">blog posts</Link>
           {" "}or my{" "}
           {latestPost ? (
-            <a href={`/blog/post/${latestPost.slug}`} className="underline ml-1">
-              "Latest Post"
-            </a>
+            <Link to={`/blog/post/${latestPost.slug}`} className="underline ml-1">
+              "latest post"
+            </Link>
           ) : (
-            <span className="ml-1 italic text-gray-500">"Latest Post"</span>
+            <span className="ml-1 italic text-gray-500">"latest post"</span>
           )}{" "}
           notes!
         </p>
@@ -103,7 +104,7 @@ const HomeIntro = () => {
                 <Coffee size={20} />
                 <span>Currently making...</span>
               </div>
-              <a href="/projects" className="underline opacity-80 hover:opacity-100 text-sm">see projects</a>
+              <Link to="/projects" className="underline opacity-80 hover:opacity-100 text-sm">see projects</Link>
             </header>
 
             <div className="space-y-3 rounded-xl border p-3 text-base">
@@ -132,8 +133,8 @@ const HomeIntro = () => {
                 </div>
               </div>
 
-              <div className="text-sm text-neutral-600 dark:text-neutral-400">
-                🏡 My corner of internet, a.k.a Personal Homepage & Portfolio.
+              <div className="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-400">
+                <span><HouseLine size={20} /></span> My corner of internet, a.k.a Personal Homepage & Portfolio.
               </div>
 
               <div className="flex items-center gap-4">
