@@ -16,6 +16,7 @@ import { assets } from '@/assets/assets';
 const HomeIntro = () => {
   const username = 'princepatel4423d';
   const [totals, setTotals] = useState({ stars: 0, forks: 0 });
+  const [latestPost, setLatestPost] = useState(null);
 
   useEffect(() => {
     const fetchTotals = async () => {
@@ -32,7 +33,18 @@ const HomeIntro = () => {
       }
     };
 
+    const fetchLatestPost = async () => {
+      try {
+        const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/blog/latest`);
+        const data = await res.json();
+        setLatestPost(data);
+      } catch (err) {
+        console.error('Failed to fetch latest blog post:', err);
+      }
+    };
+
     fetchTotals();
+    fetchLatestPost();
   }, []);
 
   return (
@@ -64,8 +76,17 @@ const HomeIntro = () => {
         </p>
 
         <p className="text-lg">
-          You might enjoy reading my <a href="/blog" className="underline">blog posts</a> or my
-          <a href="/blog/til" className="underline ml-1">"Today I Learn"</a> notes!
+          You might enjoy reading my{" "}
+          <a href="/blog" className="underline">blog posts</a>
+          {" "}or my{" "}
+          {latestPost ? (
+            <a href={`/blog/post/${latestPost.slug}`} className="underline ml-1">
+              "Latest Post"
+            </a>
+          ) : (
+            <span className="ml-1 italic text-gray-500">"Latest Post"</span>
+          )}{" "}
+          notes!
         </p>
 
         <p className="text-lg">
