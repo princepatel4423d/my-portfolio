@@ -110,7 +110,7 @@ const Blog = () => {
                 {categories.map((cat, idx) => (
                   <li
                     key={idx}
-                    className="text-gray-700 dark:text-gray-300text-sm"
+                    className="text-gray-700 dark:text-gray-300 text-sm"
                   >
                     {cat}
                   </li>
