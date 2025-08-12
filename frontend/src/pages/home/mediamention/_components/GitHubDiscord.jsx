@@ -31,7 +31,7 @@ const GitHubDiscord = () => {
         <div className="w-full border rounded-lg shadow-sm p-2 space-y-3">
           {/* Title */}
           <div className="flex items-center gap-2 text-sm font-medium">
-            <Hash size={18} weight="fill" /> GitHub Contributions
+            <Hash size={18} /> GitHub Contributions
           </div>
 
           {/* Contributions Chart */}
