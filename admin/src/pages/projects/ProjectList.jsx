@@ -67,7 +67,7 @@ const ProjectList = () => {
 
   if (loading) {
     return (
-      <div className="text-center py-12 text-gray-600 dark:text-gray-400 font-semibold text-lg">
+      <div className="text-center py-12 text-gray-600 font-semibold text-lg">
         Loading projects...
       </div>
     );
@@ -76,14 +76,14 @@ const ProjectList = () => {
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-        <h1 className="text-3xl font-extrabold text-gray-900 dark:text-white">Project Management</h1>
+        <h1 className="text-3xl font-extrabold text-gray-900">Project Management</h1>
 
         <div className="flex items-center gap-3 flex-wrap">
           <select
             aria-label="Filter Projects by Type"
             value={filterType}
             onChange={(e) => setFilterType(e.target.value)}
-            className="border border-gray-300 rounded p-2 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500"
+            className="border border-gray-300 rounded p-2 focus:ring-2 focus:ring-blue-500"
           >
             <option value="">All Types</option>
             <option value="big">Big Projects</option>
@@ -101,13 +101,13 @@ const ProjectList = () => {
       </div>
 
       {projects.length === 0 ? (
-        <p className="text-center text-gray-500 dark:text-gray-400 text-lg">No projects found.</p>
+        <p className="text-center text-gray-500 text-lg">No projects found.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
             <article
               key={project._id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 flex flex-col"
+              className="bg-white rounded-lg shadow p-6 flex flex-col"
               aria-label={`${project.type} project titled ${project.title}`}
             >
               {/* Project Image */}
@@ -121,12 +121,12 @@ const ProjectList = () => {
               )}
 
               {/* Title and Description */}
-              <h2 className="text-xl font-bold mb-2 text-gray-900 dark:text-white">{project.title}</h2>
-              <p className="text-gray-700 dark:text-gray-300 flex-grow">{project.description}</p>
+              <h2 className="text-xl font-bold mb-2 text-gray-900">{project.title}</h2>
+              <p className="text-gray-700 flex-grow">{project.description}</p>
 
               {/* Tech Stack (Big projects) */}
               {project.type === "big" && project.stack?.length > 0 && (
-                <p className="mt-3 text-sm text-gray-900 dark:text-gray-200">
+                <p className="mt-3 text-sm text-gray-900">
                   <strong>Stack:</strong> {project.stack.join(", ")}
                 </p>
               )}
@@ -137,7 +137,7 @@ const ProjectList = () => {
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300 font-semibold"
+                      className="text-xs px-2 py-1 rounded-full bg-blue-100 text-blue-800 font-semibold"
                     >
                       {tag}
                     </span>
