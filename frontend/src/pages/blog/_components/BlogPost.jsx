@@ -16,7 +16,7 @@ const BlogPost = () => {
   // Track which heading is active (scroll spy)
   const [activeId, setActiveId] = useState(null);
 
-  // Compute headings for Table of Contents unconditionally
+  // Compute headings for Table of Contents
   const headings = useMemo(() => {
     if (!post?.content) return [];
 
@@ -57,7 +57,7 @@ const BlogPost = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [headings]);
 
-  // Fetch blog data
+  // Fetch blog data and inject IDs into headings
   useEffect(() => {
     if (!slug) {
       setError("No blog slug provided.");
@@ -74,6 +74,24 @@ const BlogPost = () => {
           throw new Error(`Failed to fetch blog: ${res.statusText}`);
         }
         const data = await res.json();
+
+        // Inject heading IDs directly into HTML before setting post
+        if (data.content) {
+          const tempDiv = document.createElement("div");
+          tempDiv.innerHTML = data.content;
+
+          tempDiv.querySelectorAll("h2, h3").forEach((heading) => {
+            if (!heading.id) {
+              heading.id = heading.textContent
+                .toLowerCase()
+                .replace(/\s+/g, "-")
+                .replace(/[^\w-]/g, "");
+            }
+          });
+
+          data.content = tempDiv.innerHTML;
+        }
+
         setPost(data);
       } catch (err) {
         setError(err.message || "Something went wrong.");
