@@ -13,12 +13,16 @@ const BlogPost = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Compute headings for Table of Contents unconditionally
+  // Track which heading is active (scroll spy)
+  const [activeId, setActiveId] = useState(null);
+
+  // Extract headings for TOC
   const headings = useMemo(() => {
     if (!post?.content) return [];
     const tempDiv = document.createElement("div");
     tempDiv.innerHTML = post.content;
     const headingElements = tempDiv.querySelectorAll("h2, h3");
+
     return Array.from(headingElements).map((heading) => {
       if (!heading.id) {
         heading.id = heading.textContent
@@ -34,6 +38,24 @@ const BlogPost = () => {
     });
   }, [post?.content]);
 
+  // Update active heading while scrolling
+  useEffect(() => {
+    const handleScroll = () => {
+      let current = null;
+      for (let heading of headings) {
+        const el = document.getElementById(heading.id);
+        if (el && el.getBoundingClientRect().top <= 100) {
+          current = heading.id;
+        }
+      }
+      setActiveId(current);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [headings]);
+
+  // Fetch blog data
   useEffect(() => {
     if (!slug) {
       setError("No blog slug provided.");
@@ -61,6 +83,7 @@ const BlogPost = () => {
     fetchPost();
   }, [slug, backendUrl]);
 
+  // Loading state
   if (loading) {
     return (
       <div className="text-center py-12 text-gray-600 dark:text-gray-400">
@@ -69,6 +92,7 @@ const BlogPost = () => {
     );
   }
 
+  // Error state
   if (error) {
     return (
       <div className="text-center py-12 text-red-600 dark:text-red-400 font-semibold">
@@ -77,9 +101,7 @@ const BlogPost = () => {
     );
   }
 
-  if (!post) {
-    return null;
-  }
+  if (!post) return null;
 
   const imageUrl =
     post.image && (post.image.startsWith("http") || post.image.startsWith("https"))
@@ -88,11 +110,11 @@ const BlogPost = () => {
 
   return (
     <div className="flex flex-col lg:flex-row gap-6 py-6">
-      {/* Blog Content - 80% */}
+      {/* Blog Content */}
       <div className="w-full lg:w-[80%]">
         <article>
           {/* Tags */}
-          {post.tags && post.tags.length > 0 && (
+          {post.tags?.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-3">
               {post.tags.map((tag, idx) => (
                 <span
@@ -109,26 +131,35 @@ const BlogPost = () => {
           <h1 className="text-4xl font-bold mb-3">{post.title}</h1>
 
           {/* Description */}
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-3 whitespace-pre-line">
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 whitespace-pre-line">
             {post.description}
           </p>
 
-          {/* TOC for Mobile */}
+          {/* Mobile TOC */}
           <div className="my-6 block lg:hidden">
             <h2 className="font-semibold text-lg">Table of Contents</h2>
-            <ul className="list-disc pl-5 text-sm space-y-1">
-              {headings.length === 0 && <li>No sections found</li>}
+            <nav className="relative border-l border-neutral-300 dark:border-neutral-600 pl-4 mt-3">
+              {headings.length === 0 && (
+                <p className="text-sm text-neutral-500">No sections found</p>
+              )}
               {headings.map(({ id, text, level }) => (
-                <li
+                <a
                   key={id}
-                  className={level === 3 ? "pl-4 list-disc list-inside" : ""}
+                  href={`#${id}`}
+                  className={`block mb-2 transition-colors hover:text-blue-500 ${activeId === id
+                      ? "text-blue-600 font-semibold"
+                      : "text-neutral-700 dark:text-neutral-300"
+                    } ${level === 3 ? "ml-4 text-sm" : "ml-0 text-base font-medium"}`}
                 >
-                  <a href={`#${id}`} className="hover:underline">
+                  <span className="relative">
                     {text}
-                  </a>
-                </li>
+                    {activeId === id && (
+                      <span className="absolute -left-5 top-0.5 w-2 h-2 bg-blue-500 rounded-full"></span>
+                    )}
+                  </span>
+                </a>
               ))}
-            </ul>
+            </nav>
           </div>
 
           {/* Author Section */}
@@ -139,7 +170,7 @@ const BlogPost = () => {
                 alt="Author"
                 className="w-12 h-12 rounded-full object-cover"
               />
-              <div className="flex justify-start space-y-1 flex-col">
+              <div className="flex flex-col space-y-1">
                 <span className="font-medium">Prince Patel</span>
                 <span className="text-neutral-800 dark:text-neutral-400 text-sm">
                   {formatDate(post.date)}
@@ -171,7 +202,7 @@ const BlogPost = () => {
             />
           )}
 
-          {/* Full content */}
+          {/* Full Content */}
           {post.content && (
             <div
               className="prose prose-sm max-w-none dark:prose-invert"
@@ -181,23 +212,32 @@ const BlogPost = () => {
         </article>
       </div>
 
-      {/* TOC for Desktop/Tablet */}
+      {/* Desktop TOC */}
       <aside className="w-[20%] hidden lg:block">
         <div className="sticky top-20 space-y-3">
           <h2 className="font-semibold text-lg">Table of Contents</h2>
-          <ul className="list-disc pl-5 text-sm space-y-1">
-            {headings.length === 0 && <li>No sections found</li>}
+          <nav className="relative border-l border-neutral-300 dark:border-neutral-600 pl-4 mt-3">
+            {headings.length === 0 && (
+              <p className="text-sm text-neutral-500">No sections found</p>
+            )}
             {headings.map(({ id, text, level }) => (
-              <li
+              <a
                 key={id}
-                className={level === 3 ? "pl-4 list-disc list-inside" : ""}
+                href={`#${id}`}
+                className={`block mb-2 transition-colors hover:text-blue-500 ${activeId === id
+                    ? "text-blue-600 font-semibold"
+                    : "text-neutral-700 dark:text-neutral-300"
+                  } ${level === 3 ? "ml-4 text-sm" : "ml-0 text-base font-medium"}`}
               >
-                <a href={`#${id}`} className="hover:underline">
+                <span className="relative">
                   {text}
-                </a>
-              </li>
+                  {activeId === id && (
+                    <span className="absolute -left-5 top-0.5 w-2 h-2 bg-blue-500 rounded-full"></span>
+                  )}
+                </span>
+              </a>
             ))}
-          </ul>
+          </nav>
         </div>
       </aside>
     </div>
