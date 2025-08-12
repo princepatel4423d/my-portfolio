@@ -34,7 +34,7 @@ const Header = () => {
   const closeDropdown = () => setIsDropdownOpen(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white dark:bg-zinc-900 shadow-sm rounded-xl">
+    <header className="sticky top-2 z-50 w-full h-auto bg-white dark:bg-zinc-900 shadow-sm rounded-xl">
       <div className="flex items-center justify-between h-14 px-2">
         <div className="text-lg font-bold tracking-tight pl-3 rounded-full transition">
           PRINCE PATEL
