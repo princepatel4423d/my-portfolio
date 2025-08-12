@@ -29,6 +29,15 @@ body {
   font-family: var(--font-playfair);
 }
 
+@layer base {
+  .prose h2,
+  .prose h3,
+  .prose h4,
+  .prose h5 {
+    scroll-margin-top: 5rem;
+  }
+}
+
 @theme inline {
 
   --radius-sm: calc(var(--radius) - 4px);
