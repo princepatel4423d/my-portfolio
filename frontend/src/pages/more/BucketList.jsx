@@ -1,5 +1,6 @@
 import React from "react";
 import { MapPin, Star, CheckCircle, Heart, Camera, MusicNote, BookOpen, Trophy, Globe, Microphone, Rocket, FilmSlate, Palette } from "@phosphor-icons/react";
+import Banner from "@/components/common/Banner";
 
 const bucketItems = [
   {
@@ -123,6 +124,7 @@ const BucketList = () => {
           ))}
         </div>
       </div>
+      <Banner />
     </>
   );
 };

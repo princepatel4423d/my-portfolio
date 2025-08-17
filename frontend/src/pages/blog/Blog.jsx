@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import BlogCard from "./_components/BlogCard";
 import { AppContext } from "@/context/AppContext";
+import Banner from "@/components/common/Banner";
 
 const Blog = () => {
   const { backendUrl } = useContext(AppContext);
@@ -133,6 +134,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
+      <Banner />
     </>
   );
 };

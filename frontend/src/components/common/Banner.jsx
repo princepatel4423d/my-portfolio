@@ -4,7 +4,7 @@ import MagneticButton from "../ui/Button";
 
 const Banner = () => {
     return (
-        <section className="relative py-14 flex flex-col items-center justify-center min-h-[70vh] overflow-hidden">
+        <section className="relative py-8 md:py-12 flex flex-col items-center justify-center overflow-hidden">
             {/* Main Headline */}
             <h1 className="text-3xl md:text-5xl font-light text-center mb-6 leading-tight">
                 FROM CONCEPT TO <span className="font-bold">CREATION</span><br />
@@ -12,7 +12,7 @@ const Banner = () => {
             </h1>
 
             {/* Rotating "OPEN TO WORK" Circle */}
-            <div className="absolute right-6 md:right-20 top-8 hidden md:block">
+            <div className="absolute right-6 top-8 hidden md:block">
                 <div className="relative w-24 h-24 flex items-center justify-center">
                     {/* SVG for ring and circular text */}
                     <svg

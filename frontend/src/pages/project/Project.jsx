@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import ProjectCard from "./_components/ProjectCards";
 import { AppContext } from "@/context/AppContext";
+import Banner from "@/components/common/Banner";
 
 const Project = () => {
   const { backendUrl } = useContext(AppContext);
@@ -95,6 +96,7 @@ const Project = () => {
           </p>
         )}
       </div>
+      <Banner />
     </>
   );
 };

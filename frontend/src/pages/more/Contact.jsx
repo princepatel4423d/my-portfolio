@@ -1,6 +1,7 @@
 import React from "react";
 import { Envelope, Phone, MapPin, LinkedinLogo, GithubLogo } from "@phosphor-icons/react";
 import { BlueButton } from "@/components/ui/Button";
+import Banner from "@/components/common/Banner";
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
@@ -30,26 +31,26 @@ const Contact = () => {
 
   return (
     <>
-        <section className="max-w-4xl mx-auto text-center py-12">
-          {/* Subheading */}
-          <p className="uppercase text-sm tracking-widest text-neutral-600 dark:text-neutral-400 mb-2">
-            Get in Touch
-          </p>
+      <section className="max-w-4xl mx-auto text-center py-12">
+        {/* Subheading */}
+        <p className="uppercase text-sm tracking-widest text-neutral-600 dark:text-neutral-400 mb-2">
+          Get in Touch
+        </p>
 
-          {/* Main Heading */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal leading-tight mb-2">
-            Let’s create something <br />
-            <span className="font-playfair bg-gradient-to-r from-green-400 via-teal-500 to-blue-600 text-transparent bg-clip-text italic">
-              amazing together
-            </span>
-          </h1>
+        {/* Main Heading */}
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal leading-tight mb-2">
+          Let’s create something <br />
+          <span className="font-playfair bg-gradient-to-r from-green-400 via-teal-500 to-blue-600 text-transparent bg-clip-text italic">
+            amazing together
+          </span>
+        </h1>
 
-          {/* Optional Description */}
-          <p className="mt-4 text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
-            Have an idea, project, or just want to say hello? Fill out the form below,
-            and I’ll get back to you as soon as possible.
-          </p>
-        </section>
+        {/* Optional Description */}
+        <p className="mt-4 text-neutral-600 dark:text-neutral-400 max-w-2xl mx-auto">
+          Have an idea, project, or just want to say hello? Fill out the form below,
+          and I’ll get back to you as soon as possible.
+        </p>
+      </section>
 
       <div className="grid md:grid-cols-2 gap-12 py-12">
         {/* QUICK CONTACT */}
@@ -133,8 +134,8 @@ const Contact = () => {
             {result && <p className="text-sm text-gray-500 dark:text-gray-400">{result}</p>}
           </form>
         </div>
-
       </div>
+      <Banner />
     </>
   );
 };

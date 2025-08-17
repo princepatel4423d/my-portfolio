@@ -6,6 +6,7 @@ import Knowledge from './_components/Knowledge'
 import Experience from './_components/Experience'
 import Academic from './_components/Academic'
 import SocialLinks from './_components/SocialLinks'
+import Banner from '@/components/common/Banner'
 
 const About = () => {
   return (
@@ -17,6 +18,7 @@ const About = () => {
       <Experience />
       <Academic />
       <SocialLinks />
+      <Banner />
     </div>
   )
 }
