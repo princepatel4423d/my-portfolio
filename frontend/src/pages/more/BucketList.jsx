@@ -23,9 +23,9 @@ const bucketItems = [
     completed: false,
   },
   {
-    title: "Travel to all 7 continents",
-    icon: <Globe size={28} className="text-blue-500" />,
-    completed: false,
+    title: "Paraglide over the Saputara Mountains",
+    icon: <CheckCircle size={28} className="text-green-500" />,
+    completed: true,
   },
   {
     title: "Speak at an international tech conference",
