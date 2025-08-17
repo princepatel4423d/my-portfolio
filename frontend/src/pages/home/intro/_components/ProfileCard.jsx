@@ -10,6 +10,7 @@ import {
   HouseLine
 } from "@phosphor-icons/react";
 import { assets } from "@/assets/assets";
+import { GrayButton } from "@/components/ui/Button";
 
 const ProfileCard = ({ username, totals }) => {
   return (
@@ -64,13 +65,13 @@ const ProfileCard = ({ username, totals }) => {
       </div>
 
       <div className="flex justify-between items-center gap-4">
-        <a
-          className="flex flex-1 items-center justify-center gap-2 rounded-lg bg-neutral-700/10 px-4 py-2 transition hover:bg-neutral-700 hover:text-white dark:bg-neutral-400/10 dark:hover:bg-neutral-400 dark:hover:text-black"
+        <GrayButton
+          as="a"
           target="_blank"
           href={assets.resume}
         >
           Download CV <DownloadSimple size={18} />
-        </a>
+        </GrayButton>
         <Link
           className="flex leading-none underline opacity-70 hover:opacity-100 text-sm"
           to="/cv"

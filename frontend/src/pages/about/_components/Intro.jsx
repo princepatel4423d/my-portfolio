@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { assets } from '@/assets/assets';
 import { DownloadSimple } from '@phosphor-icons/react';
+import { GrayButton } from '@/components/ui/Button';
 
 const Intro = () => {
   return (
@@ -39,13 +40,13 @@ const Intro = () => {
         </p>
 
         <div className="flex justify-start gap-4 items-center">
-          <a
-            className="flex items-center justify-center gap-2 rounded-lg bg-neutral-700/10 px-4 py-2 transition hover:bg-neutral-700 hover:text-white dark:bg-neutral-400/10 dark:hover:bg-neutral-400 dark:hover:text-black"
+          <GrayButton
+          as="a"
             target="_blank"
             href={assets.resume}
           >
             Download CV <DownloadSimple size={18} />
-          </a>
+          </GrayButton>
           <Link
             className="text-xs sm:text-sm hover:text-gray-800 dark:hover:text-gray-200 transition cursor-pointer"
             to="/cv"

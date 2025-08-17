@@ -81,14 +81,31 @@ export default function MagneticButton({
   );
 }
 
-// 2. Gray Button
-export function GrayButton({ children = "Gray Button", className = "", ...props }) {
+// 2. Dark Button
+export function DarkButton({ children = "Dark Button", className = "", ...props }) {
   return (
     <button
       className={`
-        px-6 py-3 rounded-full 
-        bg-gray-300 text-black hover:bg-gray-400 
-        dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600
+        inline-flex items-center gap-2 bg-black text-white dark:bg-neutral-200 dark:text-black 
+        text-sm px-6 py-2.5 rounded-full shadow-md hover:bg-neutral-800 
+        dark:hover:bg-neutral-300 transition-colors duration-200
+        ${className}
+      `}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
+
+// 3. Light Button
+export function LightButton({ children = "Light Button", className = "", ...props }) {
+  return (
+    <button
+      className={`
+        inline-flex items-center gap-2 border border-black dark:border-white 
+        text-black dark:text-white text-sm px-6 py-2.5 rounded-full shadow-md 
+        hover:bg-neutral-100 dark:hover:bg-neutral-800 
         transition-colors duration-200
         ${className}
       `}
@@ -99,20 +116,50 @@ export function GrayButton({ children = "Gray Button", className = "", ...props 
   );
 }
 
-// 3. Blue Button
-export function BlueButton({ children = "Blue Button", className = "", ...props }) {
+// 4. Gray Button
+export function GrayButton({ 
+  children = "Gray Button", 
+  as = "button", // default = button, can pass "a"
+  className = "", 
+  ...props 
+}) {
+  const Component = as; // "button" or "a"
   return (
-    <button
+    <Component
       className={`
-        px-6 py-3 rounded-full 
-        bg-blue-600 text-white hover:bg-blue-700
-        dark:bg-blue-500 dark:hover:bg-blue-400
+        flex items-center justify-center gap-2 rounded-xl 
+        bg-neutral-200 px-4 py-2 hover:bg-neutral-700 hover:text-white 
+        dark:bg-neutral-800 dark:hover:bg-neutral-400 dark:hover:text-black 
         transition-colors duration-200
         ${className}
       `}
       {...props}
     >
       {children}
-    </button>
+    </Component>
+  );
+}
+
+// 5. Blue Button
+export function BlueButton({ 
+  children = "Blue Button", 
+  as = "button", // default = button, can pass "a"
+  className = "", 
+  ...props 
+}) {
+  const Component = as; 
+  return (
+    <Component
+      className={`
+        flex items-center justify-center gap-2 px-4 py-2 rounded-xl 
+        bg-blue-600 text-white hover:bg-blue-700 
+        dark:bg-blue-600 dark:hover:bg-blue-800 
+        transition-colors duration-200
+        ${className}
+      `}
+      {...props}
+    >
+      {children}
+    </Component>
   );
 }

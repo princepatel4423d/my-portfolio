@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GithubLogo, LinkSimple } from "@phosphor-icons/react";
 import { AppContext } from "@/context/AppContext";
+import { BlueButton, GrayButton } from "@/components/ui/Button";
 
 const ProjectCards = ({ project, type }) => {
     const { backendUrl } = useContext(AppContext);
@@ -66,28 +67,29 @@ const ProjectCards = ({ project, type }) => {
                     </div>
                     <div className="flex justify-center gap-6 mt-4">
                         {source && (
-                            <a
+                            <GrayButton
+                                as="a"
                                 href={source}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-xl bg-neutral-200 text-neutral-900 hover:bg-neutral-300 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 transition"
                                 aria-label="Source Code"
                             >
                                 <GithubLogo size={16} />
                                 Source
-                            </a>
+                            </GrayButton>
                         )}
                         {demo && (
-                            <a
+                            <BlueButton
+                                as="a"
                                 href={demo}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition"
+                                className=""
                                 aria-label="Live Demo"
                             >
                                 <LinkSimple size={16} />
                                 Demo
-                            </a>
+                            </BlueButton>
                         )}
                     </div>
                 </div>
@@ -120,28 +122,28 @@ const ProjectCards = ({ project, type }) => {
             </div>
             <div className="flex justify-center gap-3">
                 {source && (
-                    <a
+                    <GrayButton
+                        as="a"
                         href={source}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-xl bg-neutral-200 text-neutral-900 hover:bg-neutral-300 dark:bg-neutral-800 dark:text-white dark:hover:bg-neutral-700 transition"
                         aria-label="Source Code"
                     >
                         <GithubLogo size={16} />
                         Source
-                    </a>
+                    </GrayButton>
                 )}
                 {demo && (
-                    <a
+                    <BlueButton
+                        as="a"
                         href={demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-xl bg-blue-600 text-white hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 transition"
                         aria-label="Live Demo"
                     >
                         <LinkSimple size={16} />
                         Demo
-                    </a>
+                    </BlueButton>
                 )}
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Envelope, Phone, MapPin, LinkedinLogo, GithubLogo } from "@phosphor-icons/react";
+import { BlueButton } from "@/components/ui/Button";
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
@@ -124,12 +125,11 @@ const Contact = () => {
                 required
               ></textarea>
             </div>
-            <button
+            <BlueButton
               type="submit"
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-lg transition"
             >
               Send Message
-            </button>
+            </BlueButton>
             {result && <p className="text-sm text-gray-500 dark:text-gray-400">{result}</p>}
           </form>
         </div>

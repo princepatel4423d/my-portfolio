@@ -3,6 +3,7 @@ import { Briefcase, FileText } from "@phosphor-icons/react";
 import { Typewriter } from "./_components/TypeWriter";
 import { Link } from "react-router-dom";
 import { assets } from "@/assets/assets";
+import { DarkButton, LightButton } from "@/components/ui/Button";
 
 const Hero = () => {
     return (
@@ -55,17 +56,15 @@ const Hero = () => {
 
                 {/* Buttons */}
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <Link
-                        to="/cv"
-                        className="inline-flex items-center gap-2 bg-black text-white dark:bg-neutral-200 dark:text-black text-sm px-6 py-2.5 rounded-full shadow-md hover:bg-neutral-800 transition"
-                    >
-                        <FileText size={18} weight="duotone" /> Read CV
+                    <Link to="/cv">
+                        <DarkButton>
+                            <FileText size={18} weight="duotone" /> Read CV
+                        </DarkButton>
                     </Link>
-                    <Link
-                        to="/projects"
-                        className="inline-flex items-center gap-2 border border-black dark:border-white text-black dark:text-white text-sm px-6 py-2.5 rounded-full shadow-md hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
-                    >
-                        <Briefcase size={18} weight="duotone" /> Projects
+                    <Link to="/projects">
+                        <LightButton>
+                            <Briefcase size={18} weight="duotone" /> Projects
+                        </LightButton>
                     </Link>
                 </div>
             </div>
