@@ -37,7 +37,7 @@ const categories = [
 ];
 
 const Attribution = () => (
-    <section className="w-full py-12 border-t border-gray-200 dark:border-gray-700">
+    <section className="w-full py-12">
         <div className="max-w-5xl mx-auto px-6 text-center">
             <h2 className="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-100">
                 Built With Using Modern Technologies
