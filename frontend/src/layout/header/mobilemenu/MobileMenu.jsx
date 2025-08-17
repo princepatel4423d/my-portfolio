@@ -13,7 +13,8 @@ import {
   IdentificationCard,
   Briefcase,
   PaperPlaneTilt,
-  Target
+  Target,
+  Copyright
 } from '@phosphor-icons/react'
 import { MobileTheme } from './_components/MobileTheme'
 
@@ -115,6 +116,7 @@ export function MobileMenu() {
             <Link title="Projects" icon={Briefcase} href="/projects" />
             <Link title="Contact" icon={PaperPlaneTilt} href="/contact" />
             <Link title="Bucketlist" icon={Target} href="/bucketlist" />
+            <Link title="attribution" icon={Copyright} href="/attribution" />
 
             <Search />
 

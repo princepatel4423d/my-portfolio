@@ -59,6 +59,9 @@ import Vite from './svgs/Vite-Light.svg'
 import VSCode from './svgs/VSCode-Light.svg'
 import Windows from './svgs/Windows-Light.svg'
 import Wordpress from './svgs/Wordpress.svg'
+import Phosphor from './svgs/Phosphor.svg'
+import ReactRouter from './svgs/React-Router.svg'
+import ESLint from './svgs/ESLint.svg'
 
 export const SkillIcons = {
   AndroidStudio,
@@ -121,5 +124,8 @@ export const SkillIcons = {
   Vite,
   VSCode,
   Windows,
-  Wordpress
+  Wordpress,
+  Phosphor,
+  ReactRouter,
+  ESLint,
 };

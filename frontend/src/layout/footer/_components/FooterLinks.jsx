@@ -16,7 +16,7 @@ const FooterLinks = () => {
       links: [
         { label: "Bucketlist", href: "/bucketlist" },
         { label: "Uses", href: "/about" },
-        { label: "Attribute", href: "/attribute" },
+        { label: "Attribution", href: "/attribution" },
       ],
     },
     {
