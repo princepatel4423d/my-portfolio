@@ -1,7 +1,6 @@
 import React from "react";
 import { Envelope, Phone, MapPin, LinkedinLogo, GithubLogo } from "@phosphor-icons/react";
 import { BlueButton } from "@/components/ui/Button";
-import Banner from "@/components/common/Banner";
 
 const Contact = () => {
   const [result, setResult] = React.useState("");
@@ -135,7 +134,6 @@ const Contact = () => {
           </form>
         </div>
       </div>
-      <Banner />
     </>
   );
 };
