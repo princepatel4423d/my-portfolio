@@ -67,27 +67,27 @@ export function SearchContext({ children }) {
       icon: <Note size="1em" />,
       perform: perform('/blog')
     },
-    {
-      id: 'til',
-      name: 'Today I Learned',
-      section: 'Blog',
-      icon: <Notebook size="1em" />,
-      perform: perform('/blog/til')
-    },
-    {
-      id: 'categories',
-      name: 'Categories',
-      section: 'Blog',
-      icon: <FolderOpen size="1em" />,
-      perform: perform('/blog/categories')
-    },
-    {
-      id: 'tags',
-      name: 'Tags',
-      section: 'Blog',
-      icon: <Tag size="1em" />,
-      perform: perform('/blog/tags')
-    },
+    // {
+    //   id: 'til',
+    //   name: 'Today I Learned',
+    //   section: 'Blog',
+    //   icon: <Notebook size="1em" />,
+    //   perform: perform('/blog/til')
+    // },
+    // {
+    //   id: 'categories',
+    //   name: 'Categories',
+    //   section: 'Blog',
+    //   icon: <FolderOpen size="1em" />,
+    //   perform: perform('/blog/categories')
+    // },
+    // {
+    //   id: 'tags',
+    //   name: 'Tags',
+    //   section: 'Blog',
+    //   icon: <Tag size="1em" />,
+    //   perform: perform('/blog/tags')
+    // },
     {
       id: 'projects',
       name: 'Projects',
