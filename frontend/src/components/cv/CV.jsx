@@ -39,7 +39,7 @@ const CV = () => {
               Personal
             </h3>
             <p className="text-sm pt-2 leading-relaxed italic text-neutral-700 dark:text-neutral-200">
-              Hey, I'm Jainish — a passionate developer with a love for crafting modern web applications using the MERN stack. I enjoy building full-stack projects that solve real-world problems and push my creativity and logic. I'm also deeply interested in UI/UX, scalable backend systems, and building personal tools. Let's connect and collaborate!
+              Hey, I'm Prince — a passionate developer with a love for crafting modern web applications using the MERN stack. I enjoy building full-stack projects that solve real-world problems and push my creativity and logic. I'm also deeply interested in UI/UX, scalable backend systems, and building personal tools. Let's connect and collaborate!
             </p>
           </section>
 
@@ -60,8 +60,8 @@ const CV = () => {
               Education
             </h3>
             <ul className="text-sm space-y-2 pt-2 list-disc list-inside">
-              <li><strong>Bachelor's in Computer Science</strong>, [Your University Name]</li>
-              <li><strong>Higher Secondary</strong>, [Your School Name]</li>
+              <li><strong>Bachelor's in Computer Science</strong>, Ganpat University, Mehsana</li>
+              <li><strong>Higher Secondary</strong>, M.Y High School, Dahod</li>
             </ul>
           </section>
 
